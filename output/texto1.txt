@@ -1,1 +1,3 @@
-algoritmoseestruturadedados
+3
+6
+ALGORITMOSEESTRUTURASDEDADOSIII

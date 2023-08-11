@@ -1,13 +1,14 @@
 {
   "files.associations": {
-    "*.embeddedhtml": "html",
     "*.html": "html",
     "**/templates/*.html": "django-html",
     "**/templates/*": "django-txt",
     "**/requirements{/**,*}.{txt,in}": "pip-requirements",
+    "*.embeddedhtml": "html",
     "*.tcc": "cpp",
     "fstream": "cpp",
     "string": "cpp",
-    "istream": "cpp"
+    "istream": "cpp",
+    "iostream": "cpp"
   }
 }
