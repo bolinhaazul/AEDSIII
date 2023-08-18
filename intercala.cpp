@@ -14,6 +14,10 @@ int main()
   {
     cout << "Arquivo nao pode ser aberto" << endl;
   }
+  else
+  {
+    cout << "Digite a string para ser intercalada" << endl;
+  }
 
   return 0;
 }
