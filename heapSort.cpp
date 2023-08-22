@@ -3,11 +3,11 @@
 
 using namespace std;
 
-void heap(int vet[], int tam, int i)
+void heap(int vet[], int tam, int pai)
 {
-  int maior = i;
-  int esq = 2 * i + 1;
-  int dir = 2 * i + 2;
+  int maior = pai;
+  int esq = 2 * pai + 1;
+  int dir = 2 * pai + 2;
 
   if (esq < tam && vet[esq] > vet[maior])
   {
@@ -17,9 +17,9 @@ void heap(int vet[], int tam, int i)
   {
     maior = dir;
   }
-  if (maior != i)
+  if (maior != pai)
   {
-    swap(vet[i], vet[maior]);
+    swap(vet[pai], vet[maior]);
 
     heap(vet, tam, maior);
   }
@@ -43,8 +43,12 @@ void imprime(int vet[], int tam)
 {
   for (int i = 0; i < tam; i++)
   {
-    cout << vet[i] << " ";
-    cout << "\n";
+    if (i > 0)
+    {
+      cout << " - " << vet[i];
+    }
+    else
+      cout << vet[i];
   }
 }
 
@@ -52,14 +56,15 @@ int main()
 {
   int vet[] = {98, 51, 23, 6, 0, 147, 15, 49, 62};
   int tam = sizeof(vet) / sizeof(vet[0]);
+  cout << "O vetor a ser ordenado e \n";
+  imprime(vet, tam);
   for (int i = tam / 2 - 1; i >= 0; i--)
   {
     heap(vet, tam, i);
   }
-  cout << "Depois de trocar o vetor resultado e \n";
-  imprime(vet, tam);
+
   heapSort(vet, tam);
-  cout << "o vetor ordenado e: \n";
+  cout << "\no vetor ordenado e: \n";
   imprime(vet, tam);
   return 0;
 }
